@@ -55,7 +55,7 @@ export class MailService {
     const verifyLink = `${urlClient}${verifyPath}?email=${to}`;
 
     const otpMail = {
-      from: `Khách sạn NBT ${this.adminSystem}`,
+      from: `Quản lý chi tiêu NBT ${this.adminSystem}`,
       to: to,
       subject: 'Xác thực email - Hotel NBT',
       html: `

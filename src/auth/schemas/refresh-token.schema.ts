@@ -8,7 +8,7 @@ export class RefreshToken {
   userId: Types.ObjectId;
 
   @Prop({ required: true })
-  token: string; // hash
+  refreshToken: string; // hash
 
   @Prop({ required: true })
   expiresAt: Date;
