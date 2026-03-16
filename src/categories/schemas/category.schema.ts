@@ -1,14 +1,16 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import mongoose from 'mongoose';
-import { CategoryType } from '../enums/category-type.enum';
+import mongoose, { HydratedDocument } from 'mongoose';
+import { TransactionType } from 'src/common/enums/transaction-type.enum';
+
+export type CategoryDocument = HydratedDocument<Category>;
 
 @Schema({ timestamps: true })
 export class Category {
   @Prop({ required: true })
   name: string;
 
-  @Prop({ enum: CategoryType, required: true })
-  type: CategoryType;
+  @Prop({ enum: TransactionType, required: true })
+  type: TransactionType;
 
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
   userId: mongoose.Types.ObjectId;

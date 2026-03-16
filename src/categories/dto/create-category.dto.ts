@@ -1,10 +1,10 @@
 import { IsEnum, IsString } from 'class-validator';
-import { CategoryType } from '../enums/category-type.enum';
+import { TransactionType } from 'src/common/enums/transaction-type.enum';
 
 export class CreateCategoryDto {
   @IsString()
   name: string;
 
-  @IsEnum(CategoryType)
-  type: CategoryType;
+  @IsEnum(TransactionType)
+  type: TransactionType;
 }

@@ -8,6 +8,7 @@ import {
   Delete,
   UseGuards,
   Req,
+  Query,
 } from '@nestjs/common';
 import { CategoriesService } from './categories.service';
 import { CreateCategoryDto } from './dto/create-category.dto';
@@ -32,8 +33,11 @@ export class CategoriesController {
 
   @UseGuards(AuthGuard)
   @Get()
-  findAll(@Req() req: Request & { user: { userId: string } }) {
-    return this.categoriesService.findAll(req.user.userId);
+  findAll(
+    @Query('type') type: string,
+    @Req() req: Request & { user: { userId: string } },
+  ) {
+    return this.categoriesService.findAll(req.user.userId, type);
   }
 
   @UseGuards(AuthGuard)

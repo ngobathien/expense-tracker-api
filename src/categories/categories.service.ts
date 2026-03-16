@@ -6,14 +6,14 @@ import {
 import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
 import { InjectModel } from '@nestjs/mongoose';
-import { Category } from './schemas/category.schema';
+import { Category, CategoryDocument } from './schemas/category.schema';
 import { Model } from 'mongoose';
 
 @Injectable()
 export class CategoriesService {
   constructor(
     @InjectModel(Category.name)
-    private categoryModel: Model<Category>,
+    private categoryModel: Model<CategoryDocument>,
   ) {}
 
   async createCategory(dto: CreateCategoryDto, userId: string) {
@@ -35,7 +35,11 @@ export class CategoriesService {
     });
   }
 
-  async findAll(userId: string) {
+  async findAll(userId: string, type: string) {
+    if (type) {
+      return this.categoryModel.find({ type });
+    }
+
     return this.categoryModel.find({ userId });
   }
 
