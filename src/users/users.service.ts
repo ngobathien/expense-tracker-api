@@ -36,6 +36,14 @@ export class UsersService {
     return this.userModel.findById(id).select('-password').exec();
   }
 
+  /// GET ME
+  async getMe(userId: string): Promise<User | null> {
+    return this.userModel
+      .findById(userId)
+      .select('-password -refreshToken') // bảo mật
+      .exec();
+  }
+
   // users.service.ts
   // cho việc đổi mật khẩu
   async findByIdWithPassword(

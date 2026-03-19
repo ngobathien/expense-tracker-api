@@ -12,12 +12,7 @@ import { SignUpDto } from './dto/sign-up-auth.dto';
 
 import * as bcrypt from 'bcrypt';
 import { RefreshTokenDto } from './dto/refresh-token.dto';
-import {
-  AuthProvider,
-  User,
-  UserDocument,
-  UserStatus,
-} from '../users/schemas/user.schema';
+import { User, UserDocument } from '../users/schemas/user.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { RefreshToken } from './schemas/refresh-token.schema';
@@ -26,6 +21,8 @@ import { ResetToken } from './schemas/reset-token.schema';
 import { MailService } from '../services/mail.service';
 import { Otp, OtpDocument } from './schemas/email-otp.schema';
 import { VerifyOtpDto } from './dto/verify-otp.dto';
+import { AuthProvider } from 'src/users/enums/auth-provider.enum';
+import { UserStatus } from 'src/users/enums/user-status.enum';
 
 interface GoogleProfile {
   displayName: string;

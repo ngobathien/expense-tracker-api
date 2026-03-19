@@ -7,16 +7,17 @@ import {
   Param,
   Delete,
   UseGuards,
+  Req,
+  Put,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
-
-import { UserRole } from './schemas/user.schema';
 
 import { Roles } from '../auth/decorators/roles.decorator';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { AuthGuard } from '../auth/guards/auth.guard';
 import { RolesGuard } from '../auth/guards/roles.guard';
+import { UserRole } from './enums/user-role.enum';
 
 @Controller('users')
 export class UsersController {
@@ -34,6 +35,29 @@ export class UsersController {
   @Roles(UserRole.ADMIN)
   findAll() {
     return this.usersService.getAllUsers();
+  }
+
+  // GET PROFILE
+  @Get('me')
+  @UseGuards(AuthGuard)
+  async getMe(@Req() req: Request & { user: { userId: string } }) {
+    return {
+      message: 'Get profile successfully',
+      data: await this.usersService.getMe(req.user.userId),
+    };
+  }
+
+  // UPDATE PROFILE
+  @Put('me')
+  @UseGuards(AuthGuard)
+  async updateMe(
+    @Req() req: Request & { user: { userId: string } },
+    @Body() dto: UpdateUserDto,
+  ) {
+    return {
+      message: 'Update profile successfully',
+      data: await this.usersService.updateUser(req.user.userId, dto),
+    };
   }
 
   @Get(':id')

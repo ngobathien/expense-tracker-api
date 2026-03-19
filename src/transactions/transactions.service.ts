@@ -103,25 +103,4 @@ export class TransactionsService {
 
     return { message: 'Deleted successfully' };
   }
-
-  async getSummary(userId: string) {
-    const transactions = await this.transactionModel.find({ userId });
-
-    let totalIncome = 0;
-    let totalExpense = 0;
-
-    transactions.forEach((t) => {
-      if (t.type === TransactionType.INCOME) {
-        totalIncome += t.amount;
-      } else {
-        totalExpense += t.amount;
-      }
-    });
-
-    return {
-      totalIncome,
-      totalExpense,
-      balance: totalIncome - totalExpense,
-    };
-  }
 }

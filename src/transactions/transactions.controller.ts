@@ -41,12 +41,6 @@ export class TransactionsController {
   }
 
   @UseGuards(AuthGuard)
-  @Get('summary')
-  getSummary(@Req() req: Request & { user: { userId: string } }) {
-    return this.transactionsService.getSummary(req.user.userId);
-  }
-
-  @UseGuards(AuthGuard)
   @Get(':id')
   findOne(
     @Param('id') id: string,

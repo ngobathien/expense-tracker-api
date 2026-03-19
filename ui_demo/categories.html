@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="css/style.css">
+
+<div id="navbar"></div>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>Categories</h2>
+
+        <!-- TABS -->
+
+        <div class="tabs">
+            <div id="tabIncome" class="tab active" onclick="showIncome()">Thu</div>
+            <div id="tabExpense" class="tab" onclick="showExpense()">Chi</div>
+        </div>
+
+        <!-- FORM -->
+
+        <form id="categoryForm">
+
+            <input id="name" placeholder="Category name">
+
+            <button id="submitBtn">+ Thêm danh mục thu</button>
+
+        </form>
+
+        <!-- LIST -->
+
+        <div id="categories"></div>
+
+    </div>
+
+</div>
+
+<script src="js/navbar.js"></script>
+<script src="js/api.js"></script>
+<script src="js/categories.js"></script>

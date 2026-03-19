@@ -9,6 +9,9 @@ import {
 import { TransactionType } from '../../common/enums/transaction-type.enum';
 
 export class CreateTransactionDto {
+  @IsString()
+  name: string;
+
   @IsNumber()
   amount: number;
 

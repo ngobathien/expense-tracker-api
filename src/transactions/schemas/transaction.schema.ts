@@ -7,6 +7,9 @@ export type TransactionDocument = HydratedDocument<Transaction>;
 @Schema({ timestamps: true })
 export class Transaction {
   @Prop({ required: true })
+  name: string;
+
+  @Prop({ required: true })
   amount: number;
 
   @Prop({ enum: TransactionType, required: true })

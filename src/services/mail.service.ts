@@ -57,7 +57,7 @@ export class MailService {
     const otpMail = {
       from: `Quản lý chi tiêu NBT ${this.adminSystem}`,
       to: to,
-      subject: 'Xác thực email - Hotel NBT',
+      subject: 'Xác thực email - Quản lý chi tiêu NBT',
       html: `
       <div style="font-family: Arial, sans-serif; padding:20px; background:#f6f6f6;">
         
@@ -69,7 +69,7 @@ export class MailService {
 
           <p>Xin chào,</p>
 
-          <p>Bạn vừa yêu cầu xác thực email cho tài khoản tại <b>Hotel NBT</b>.</p>
+          <p>Bạn vừa yêu cầu xác thực email cho tài khoản tại <b>Quản lý chi tiêu NBT</b>.</p>
 
           <p>Mã OTP của bạn là:</p>
 

@@ -6,8 +6,9 @@ import {
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { Request } from 'express';
-import { UserRole } from '../../users/schemas/user.schema';
+
 import { UsersService } from '../../users/users.service';
+import { UserRole } from 'src/users/enums/user-role.enum';
 
 interface AuthenticatedRequest extends Request {
   user?: { userId: string; role: UserRole };

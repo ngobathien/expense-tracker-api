@@ -1,24 +1,11 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
+import { AuthProvider } from '../enums/auth-provider.enum';
+import { UserStatus } from '../enums/user-status.enum';
+import { UserRole } from '../enums/user-role.enum';
 // backend/src/users/schemas/user.schema.ts
 export type UserDocument = HydratedDocument<User>;
 
-// role
-export enum UserRole {
-  USER = 'USER',
-  ADMIN = 'ADMIN',
-}
-
-// status
-export enum UserStatus {
-  ACTIVE = 'ACTIVE',
-  INACTIVE = 'INACTIVE',
-  BLOCKED = 'BLOCKED',
-}
-export enum AuthProvider {
-  LOCAL = 'local',
-  GOOGLE = 'google',
-}
 @Schema({ timestamps: true })
 export class User {
   @Prop({ required: true })
