@@ -3,23 +3,21 @@
 <div id="navbar"></div>
 
 <div class="container">
-
     <div class="card">
-
         <h2>📊 Report</h2>
 
         <div class="tabs">
             <div id="tabSummary" class="tab active" onclick="showSummary()">Tổng quan</div>
             <div id="tabMonthly" class="tab" onclick="showMonthly()">Theo tháng</div>
             <div id="tabCategory" class="tab" onclick="showCategory()">Theo danh mục</div>
+            <div id="tabCalendar" class="tab" onclick="showCalendar()">📅 Lịch</div>
         </div>
 
         <div id="reportContent"></div>
-
     </div>
-
 </div>
 
 <script src="js/navbar.js"></script>
 <script src="js/api.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- 👈 đúng chỗ -->
 <script src="js/report.js"></script>

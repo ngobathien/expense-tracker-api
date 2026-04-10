@@ -134,6 +134,9 @@ export class AuthService {
       refreshToken,
       user: {
         role: user.role,
+        email: user.email,
+        fullName: user.fullName,
+        userId: user._id,
       },
     };
   }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Manager UI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="mobile-container">
+        <header class="date-selector">
+            <i class="fas fa-chevron-left"></i>
+            <div class="current-month">
+                <span id="display-month">03/2026</span>
+                <i class="far fa-calendar-alt"></i>
+            </div>
+            <i class="fas fa-chevron-right"></i>
+        </header>
+
+        <div class="calendar-grid" id="calendar-grid">
+        </div>
+
+        <div class="summary-banner">
+            <div class="summary-item">
+                <label>Thu nhập</label>
+                <span class="income" id="total-income">0đ</span>
+            </div>
+            <div class="summary-item border-x">
+                <label>Chi tiêu</label>
+                <span class="expense" id="total-expense">0đ</span>
+            </div>
+            <div class="summary-item">
+                <label>Tổng</label>
+                <span class="balance" id="total-balance">0đ</span>
+            </div>
+        </div>
+
+        <div class="transaction-list" id="transaction-list">
+        </div>
+
+        <nav class="bottom-nav">
+            <div class="nav-item active"><i class="fas fa-calendar-alt"></i><span>Lịch</span></div>
+            <div class="nav-item"><i class="fas fa-chart-pie"></i><span>Thống kê</span></div>
+            <div class="nav-item plus-btn"><i class="fas fa-plus"></i></div>
+            <div class="nav-item"><i class="fas fa-book"></i><span>Sổ thu chi</span></div>
+            <div class="nav-item"><i class="fas fa-ellipsis-h"></i><span>Khác</span></div>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+#transactions {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* CARD transaction đẹp hơn */
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 14px;
+  border-radius: 14px;
+
+  background: #ffffff;
+  border: 1px solid #eef2f7;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* hover đẹp hơn */
+.transaction:hover {
+  transform: translateY(-2px);
+  border-color: #3b82f6;
+  background: #f8fbff;
+}
+
+/* left side */
+.transaction-left {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.transaction-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.transaction-sub {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* amount */
+.transaction-amount {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.transaction-amount.income {
+  color: #22c55e;
+}
+
+.transaction-amount.expense {
+  color: #ef4444;
+}

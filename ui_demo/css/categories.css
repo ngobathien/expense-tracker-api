@@ -1,0 +1,60 @@
+#categories {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 12px;
+}
+
+#categories .card {
+  background: #f9fafb;
+  border: 1px solid #eef2f7;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: none;
+}
+
+#categories .card:hover {
+  border-color: var(--primary);
+  background: #eff6ff;
+}
+
+#categories .card b {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+#categories .card div {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+#categories .card button {
+  flex: 1;
+  padding: 6px 8px;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+#categories .card button:first-child {
+  background: #3b82f6;
+}
+
+#categories .card button:last-child {
+  background: #ef4444;
+}
+
+#categories:empty::after {
+  content: 'Chưa có danh mục';
+  display: block;
+  text-align: center;
+  color: #6b7280;
+  padding: 14px;
+}
+
+@media (max-width: 768px) {
+  #categories {
+    grid-template-columns: 1fr;
+  }
+}

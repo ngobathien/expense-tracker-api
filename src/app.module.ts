@@ -10,6 +10,7 @@ import { CategoriesModule } from './categories/categories.module';
 import { TransactionsModule } from './transactions/transactions.module';
 import { UsersService } from './users/users.service';
 import { StatsModule } from './stats/stats.module';
+import { AiChatbotModule } from './ai_chatbot/ai_chatbot.module';
 
 @Module({
   imports: [
@@ -45,6 +46,8 @@ import { StatsModule } from './stats/stats.module';
     TransactionsModule,
 
     StatsModule,
+
+    AiChatbotModule,
   ],
   controllers: [AppController],
   providers: [AppService],
